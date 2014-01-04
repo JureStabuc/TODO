@@ -17,6 +17,10 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
 
+group :development, :test do
+	gem 'sqlite3'
+end
+
 group :doc do
   gem 'sdoc', require: false
 end
@@ -29,8 +33,4 @@ group :test do
 	gem 'capybara', '~> 2.1.0'
 	gem 'shoulda-matchers', '~> 2.4.0'
 end
-group :production do
-	gem 'pg'
-	gem 'rails_12factor'
-	gem 'thin'
-end
+
