@@ -12,7 +12,7 @@ resources :user_friendships
     end
   end
   root 'todo_lists#index'
-  get '/:id', to: 'profiles#show'
+  get '/:id', to: 'profiles#show', as: 'profile'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
