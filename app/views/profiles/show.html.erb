@@ -1,2 +1,10 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<h1><%= @user.profile_name %></h1>
+
+<% if @todo_lists %>
+	<% @todo_lists.each do |todo_list| %>
+		<h2><%= todo_list.title %></h2>
+  <p><%= todo_list.description %></p>
+		<hr />
+		<% end %>
+		<% end %>
+
