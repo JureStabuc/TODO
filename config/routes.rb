@@ -1,4 +1,5 @@
 Todo::Application.routes.draw do
+  get "profiles/show"
   devise_for :users
   resources :todo_lists do
     resources :todo_items do
