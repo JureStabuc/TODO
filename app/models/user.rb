@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
 
   has_many :todo_lists
   has_many :todo_items
+  has_many :user_friendships
+  has_many :friends, through: :user_friendships
 
   validates :first_name, presence: true
 
