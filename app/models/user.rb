@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
   has_many :todo_lists
   has_many :todo_items
   has_many :user_friendships
-  has_many :friends, through: :user_friendships,
-                     conditions : { user_friendships: { state: 'accepted' }}
+  has_many :friends, through: :user_friendships
+                     
 
   has_many :pending_user_friendships, class_name: 'UserFriendship',
                                       foreign_key: :user_id,
