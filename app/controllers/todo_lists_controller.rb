@@ -1,6 +1,6 @@
 class TodoListsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_todo_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_todo_list, :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /todo_lists
   # GET /todo_lists.json
@@ -70,8 +70,13 @@ class TodoListsController < ApplicationController
       @todo_list = TodoList.find(params[:id])
     end
 
+    def set_user
+      @todo_list.user = User.find_by(@todo_list.user_id)
+      
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def todo_list_params
-      params.require(:todo_list).permit(:title, :description)
+      params.require(:todo_list).permit(:title, :description, :user_id)
     end
 end
