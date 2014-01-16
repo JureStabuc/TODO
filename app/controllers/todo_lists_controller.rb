@@ -71,8 +71,7 @@ class TodoListsController < ApplicationController
     end
 
     def set_user
-      @todo_list.user = User.find_by(@todo_list.user_id)
-      
+      @todo_list.user = User.find_by(@todo_list.user_id)      
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
