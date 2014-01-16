@@ -1,6 +1,16 @@
 <h1><%= @user.profile_name %></h1>
+
 <h4><%= link_to "Edit User", edit_user_registration_path %></h4>
-<h4><%= link_to "Add Friend", new_user_friendship_path(friend_id: @user) %></h4>
+
+<% if signed_in? %>
+<div id="friend-status">
+	<% if current_user.friends.include?(@user) || current_user.pending_friends.include?(@user) %>
+	<%= link_to "Edit Friendship", edit_user_friendship_path(friend_id: @user), class: 'btn btn-default' %> 
+	<% else %>
+	<%= link_to "Add Friend", new_user_friendship_path(friend_id: @user), class: 'btn btn-default', id: 'add-friendship', data: { friend_id: @user.to_param }%>
+	<% end %>
+</div>
+<% end %>
 
 
 <% if @todo_lists %>

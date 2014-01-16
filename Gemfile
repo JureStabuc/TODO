@@ -21,6 +21,10 @@ gem 'devise'
 
 gem 'state_machine'
 
+gem 'draper'
+
+gem 'js-routes'
+
 group :doc do
   gem 'sdoc', require: false
 end
