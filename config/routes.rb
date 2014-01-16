@@ -15,7 +15,7 @@ Todo::Application.routes.draw do
     delete "/logout" => 'devise/sessions#destroy', as: :destroy_user_session
   end
 
-  resource :user_friendships do
+  resources :user_friendships do
     member do
       put :accept
     end
