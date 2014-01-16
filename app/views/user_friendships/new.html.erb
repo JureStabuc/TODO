@@ -4,7 +4,7 @@
 	<p>Do you really want to friend <%= @friend.full_name %></p>
 
 	<%= form_for @user_friendship, method: :post do |form| %>
-	<%= form.submit "Yes, Add Friend" %>
+	<%= form.submit "Yes, Add Friend", class: 'btn btn-primary' %>
 	<div class="actions">
 		<%= form.hidden_field :friend_id, value: @friend.profile_name %>
     	
