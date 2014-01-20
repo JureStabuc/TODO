@@ -25,6 +25,9 @@ gem 'draper'
 
 gem 'js-routes'
 
+gem 'figaro'
+
+
 group :doc do
   gem 'sdoc', require: false
 end
