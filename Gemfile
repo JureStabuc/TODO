@@ -27,6 +27,9 @@ gem 'js-routes'
 
 gem 'figaro'
 
+gem "searchkick"
+
+
 
 group :doc do
   gem 'sdoc', require: false

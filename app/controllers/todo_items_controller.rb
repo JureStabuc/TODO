@@ -71,6 +71,6 @@ class TodoItemsController < ApplicationController
 
 
   def todo_item_params
-  	params[:todo_item].permit(:content)  	
+  	params[:todo_item].permit(:content, :difficult)  	
   end
 end

@@ -13,11 +13,7 @@
   <%= form.label :content %>
   <%= form.text_field :content %>
 
-  <select>
-  <option value="easy">Easy</option>
-  <option value="intermediate">Intermediate</option>
-  <option value="difficult">Difficult</option>
-  <option value="very difficult">Very difficult</option>
-</select> 
+  <%= form.label :difficulty %>
+  <%= form.select :difficult, options_for_select([["Easy", "Easy"], ["Intermediate", "Intermediate"], ["Difficult", "Difficult"]], @todo_item.difficult) %>
 
   <%= form.submit "Save" %>
