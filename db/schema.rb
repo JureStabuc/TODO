@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20140121094008) do
     t.datetime "updated_at"
     t.datetime "completed_at"
     t.integer  "user_id"
-    t.integer  "difficulty"
     t.string   "difficult"
   end
 
