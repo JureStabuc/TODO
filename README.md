@@ -2,6 +2,6 @@ Taskmama - TODO task app
 ==
 TODO:
 
-Search User
-Avatars
-Push notifications
+<ul>Search User</ul>
+<ul>Avatars</ul>
+<ul>Push notifications</ul>
