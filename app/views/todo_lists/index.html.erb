@@ -2,16 +2,24 @@
 
 <% @todo_lists.each do |todo_list| %>
 <div class="todo_list" id="<%= dom_id(todo_list) %>">
-  <h2>Name: <%= link_to todo_list.user.full_name, profile_path(todo_list.user) %></h2>
-  <h2><%= todo_list.title %></h2>
-  <p><%= todo_list.description %></p>
-  <ul class="functions">
-    <li><%= link_to "List Items", todo_list_todo_items_path(todo_list) %></li>
-    <li><%= link_to 'Show', todo_list %></li>
-    <li><%= link_to 'Edit', edit_todo_list_path(todo_list) %></li>
-    <li><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-  </ul>
-  <br class="clear" />
+    <div class="row">
+        <div class="col-md-7">
+          <div class="col-md-2">
+            <%= link_to image_tag(todo_list.user.gravatar_url), profile_path(todo_list.user) %>
+          </div>
+
+        <h2><%= link_to todo_list.user.full_name, profile_path(todo_list.user) %></h2> </br>
+        <h2><%= todo_list.title %></h2>
+        <p><%= todo_list.description %></p>
+        <ul class="functions">
+          <li><%= link_to "List Items", todo_list_todo_items_path(todo_list) %></li>
+          <li><%= link_to 'Show', todo_list %></li>
+          <li><%= link_to 'Edit', edit_todo_list_path(todo_list) %></li>
+          <li><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        </ul>
+        <br class="clear" />
+       </div>
+    </div>
 </div>
 <% end %>
 
