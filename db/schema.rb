@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140121094008) do
+ActiveRecord::Schema.define(version: 20140127105735) do
+
+  create_table "documents", force: true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "add_attachment_file_name"
+    t.string   "add_attachment_content_type"
+    t.integer  "add_attachment_file_size"
+    t.datetime "add_attachment_updated_at"
+  end
+
+  add_index "documents", ["user_id"], name: "index_documents_on_user_id"
 
   create_table "todo_items", force: true do |t|
     t.integer  "todo_list_id"
@@ -60,6 +72,10 @@ ActiveRecord::Schema.define(version: 20140121094008) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

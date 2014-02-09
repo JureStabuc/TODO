@@ -21,8 +21,6 @@ Todo::Application.routes.draw do
     end
   end
 
-resources :user_friendships
-
   resources :todo_lists do
     resources :todo_items do
       member do

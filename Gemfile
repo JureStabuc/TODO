@@ -29,6 +29,8 @@ gem 'figaro'
 
 gem "searchkick"
 
+gem 'paperclip'
+
 
 
 group :doc do

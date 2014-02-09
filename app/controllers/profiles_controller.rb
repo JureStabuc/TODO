@@ -2,9 +2,9 @@ class ProfilesController < ApplicationController
 
   def index
     if params[:query].present?
-      @books = User.search(params[:query], page: params[:page])
+      @user = User.search(params[:query], page: params[:page])
     else
-      @books = User.all.page params[:page]
+      @user = User.all.page params[:page]
     end
   end
 
@@ -16,5 +16,14 @@ class ProfilesController < ApplicationController
   	else
   	render file: 'public/404', status: 404, formats: [:html]
   end
+
+  def create
+    @user = User.create( user_params )
   end
+end
+  
+  def user_params
+    params.require(:user).permit(:avatar)
+  end
+ 
 end
