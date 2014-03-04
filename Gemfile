@@ -31,6 +31,8 @@ gem "searchkick"
 
 gem 'paperclip'
 
+gem 'merit'
+
 
 
 group :doc do

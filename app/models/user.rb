@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_merit
+
   searchkick
 
   devise :database_authenticatable, :registerable,

@@ -2,32 +2,36 @@
 <html>
 <head>
   <title>Todo</title>
+
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 <body>
 
-	<nav class="navbar navbar-default" role="navigation">
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="navbar-header">
 			<div class="container">
 		
-		<ul class="nav nav-tabs">
-			<li><%= link_to "Home", root_path %></li>
+		<ul class="nav nav-pills">
+			<li class="active"><%= link_to "Home", root_path %></li>
 			<li><%= link_to "Todo lists", todo_lists_path %></li>
 		
 		<% if user_signed_in? %>
 		<li class="nav pull-right">
-		<%= form_tag profiles_show_path, class: "form-inline", method: :get do %>
-				  <div class = "form-group">
-				    <%= text_field_tag :query, params[:query], class: "form-control" %>
-				    <%= submit_tag "Search", class: "btn btn-primary" %>
-				    <% if params[:query].present? %>
-						<%= link_to "clear", profiles_show_path %>
+			<%= form_tag profiles_show_path, class: "form", method: :get do %>
+					    <%= text_field_tag :query, params[:query], class: "form-control" %>
+					    </li>
+					    <li class="nav pull-right">
+					    <%= submit_tag "Search", class: "btn btn-primary" %>
+					    <% if params[:query].present? %>
+							<%= link_to "clear", profiles_show_path %>
 						<% end %>
-					</div>
-				   <% end %>
-				</li>
+						</li>
+			<% end %>
+		
 		
     	 
 		

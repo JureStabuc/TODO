@@ -52,3 +52,11 @@ div.nav ul li a:hover {
   background: #aaa;
   color: #eee;
 }
+
+body {
+padding-top: 100px;
+}
+
+.alert {
+margin-top: 10px;
+}
