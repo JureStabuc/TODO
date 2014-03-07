@@ -36,3 +36,10 @@
 <p>
   <%= link_to "New Todo Item", new_todo_list_todo_item_path %>
 </p>
+
+<%= current_user.points %>
+<ul>
+<% current_user.badges.each do |badge| %>
+  <li><%= badge.name %></li>
+<% end %>
+</ul>

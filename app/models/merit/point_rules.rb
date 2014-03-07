@@ -13,7 +13,9 @@ module Merit
     include Merit::PointRulesMethods
 
     def initialize
-      # score 10, :on => 'users#update' do
+      score 2, :on => 'todo_items#complete' do |todo_item|
+        todo_item.completed?
+    end
       #   user.name.present?
       # end
       #
