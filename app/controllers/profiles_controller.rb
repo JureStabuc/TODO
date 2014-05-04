@@ -1,11 +1,11 @@
 class ProfilesController < ApplicationController
 
   def index
-    if params[:query].present?
-      @user = User.search(params[:query], page: params[:page])
-    else
-      @user = User.all.page params[:page]
-    end
+    #if params[:query].present?
+      #@user = User.search(params[:query], page: params[:page])
+    #else
+      #@user = User.all.page params[:page]
+    #end
   end
 
   def show

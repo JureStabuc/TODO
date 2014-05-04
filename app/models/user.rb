@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_merit
 
-  searchkick
+  #searchkick
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

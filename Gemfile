@@ -27,7 +27,7 @@ gem 'js-routes'
 
 gem 'figaro'
 
-gem "searchkick"
+#gem "searchkick"
 
 gem 'paperclip'
 
